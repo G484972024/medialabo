@@ -3,11 +3,17 @@ p {
 }
 
 p.info {
-	font-size: 10pt;
+	font-size: small;
+	border: solid 1px #dfdfdf;
+	background-color: #dfdfdf;
+	
 }
 
 h1 {
-	background-color: #7f7fcf;
+	color: white;
+	background-color: white;
+	text-shadow: 1px 1px 10px navy;
+	
 }
 
 h2 {
@@ -16,12 +22,33 @@ h2 {
 }
 
 div#zentai {
-	display: flex;
-	flex-direction: row;
-	width: 1024px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: 200px;
+    grid-gap: 10px;
+	
+	
 }
 
+
+
 div#zentai > div {
-	margin-left: 5px;
-	background-color: #ffefaf;
+	padding: 5px;
+	
+	background: #ffefaf;
+	
+	color: #3f3faf;
+	
 }
+div#zentai > div > h2 {
+	background: linear-gradient(to right,white, #ffefaf);
+	font-family: cursive;
+	border: #ffefaf;
+}
+img.sign {
+	float: right;
+}
+
+
+
+
