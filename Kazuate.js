@@ -67,9 +67,7 @@ function hantei() {
     
 
     }
-    let f = document.querySelector('p#result');
-    f.textContent = "jj";
-   
+    
     
 }
 
