@@ -15,4 +15,30 @@ let gakka = [
 ];
 
 //////////////// ここから下にプログラムを書きたそう!
+function henkou() {
+	let p = document.createElement('a'); 
+	p.textContent = campus.address;
+	let c = document.querySelector('h2#addr');
+	c.insertAdjacentElement('afterend', p);
+	let l = document.createElement('ul'); 
+	
+	for(let r = 0;r<gakka.length;r=r+1) {
+		let i = document.createElement('li');
+		let u = gakka[r].name;
+		i.textContent = u;
+		
+
+		
+		l.insertAdjacentElement('beforeend', i);
+	}
+	let g = document.querySelector('h2#dept');
+	g.insertAdjacentElement('afterend', l);
+	
+
+}
+let b = document.querySelector('button#show');
+b.addEventListener('click', henkou);
+
+
+
 
