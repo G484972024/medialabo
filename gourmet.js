@@ -8,27 +8,41 @@ function print(data) {
   }
 
   
-    
+
   
 
   
 
 }
 
-// 課題5-1 の関数 printDom() はここに記述すること
-function printDom() {
 
-  let y = document.querySelector('p#kekka'); 
-  let u = document.createElement('p');
+let c = document.createElement('div');
+c.setAttribute('id', 'result');
+let y = document.querySelector('p#kekka'); 
+let u = document.createElement('p');
+u.setAttribute('id','nikenn');
+y.insertAdjacentElement('beforeend', u) 
+
+
+// 課題5-1 の関数 printDom() はここに記述すること
+function printDom(data) {
+
+  c.remove();
+  u.remove();
+
+  y = document.querySelector('p#kekka'); 
+
+  u = document.createElement('p');
   u.setAttribute('id','nikenn');
   u.textContent = '二件がヒットしました';
   y.insertAdjacentElement('beforeend', u) 
 
 
-  let c = document.createElement('div');
+  c = document.createElement('div');
   c.setAttribute('id', 'result');
   let b = document.querySelector('body');
   b.insertAdjacentElement('beforeend', c); 
+
   let a = document.createElement('ul'); 
   a.setAttribute('id','ikenme');
   let h = document.createElement('ul');
@@ -40,13 +54,12 @@ function printDom() {
 
 
  
-
-  let e = document.createElement('li');
   let shop = data.results.shop[0];
-  e.textContent = shop.name;
+  let e = document.createElement('li');
+  e.textContent = "[店名]  "+shop.name;
   a.insertAdjacentElement('beforeend', e); 
   let w = document.createElement('li');
-  w.textContent = shop.access;
+  w.textContent = "[アクセス]  "+shop.access;
   a.insertAdjacentElement('beforeend', w); 
   c.insertAdjacentElement('beforeend', a);
   
@@ -55,10 +68,10 @@ function printDom() {
 
   shop = data.results.shop[1];
   e = document.createElement('li');
-  e.textContent = shop.name; //店の名前
+  e.textContent = "[店名]  "+shop.name; //店の名前
   h.insertAdjacentElement('beforeend', e); 
   w = document.createElement('li');
-  w.textContent = shop.access;//アクセス
+  w.textContent = "[アクセス]  "+shop.access;//アクセス
   h.insertAdjacentElement('beforeend', w); 
   c.insertAdjacentElement('beforeend', h);
 
@@ -79,18 +92,30 @@ function printDom() {
   let qq = document.createElement('p'); 
   qq.textContent = '2件目'; 
   gg.insertAdjacentElement('beforebegin',qq); 
+
+  
+  // if(ii>0){
+   
+  //   c.remove();
+   
+   
+   
+  // }
+  // ii += 1;
+
+
+
     
     
 
 
-  
-  
 
   
 
 }
 
-let y = document.querySelector('button#kai');
+
+ y = document.querySelector('button#kai');
 y.addEventListener('click', sendRequest); 
 
 
@@ -105,7 +130,10 @@ y.addEventListener('click', sendRequest);
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {
-  let url = 'https://www.nishita-lab.org/web-contents/jsons/nhk/g1-0000-j.json';
+  let i = document.querySelector('select#yosou');
+  let key = i.value 
+  
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/'+key+'.json';
 
   axios.get(url)
      .then(showResult)
@@ -123,6 +151,11 @@ function sendRequest() {
 // 課題6-1: 通信が成功した時の処理は以下に記述
 function showResult(resp) {
   let data = resp.data;
+  if(typeof data == 'string'){
+    data = JSON.parse(data);
+  }
+  console.log(data);
+  console.log(data.x);
   printDom(data);
 
 
@@ -142,7 +175,7 @@ function finish() {
 // 以下はグルメのデータサンプル
 // 注意: 第5回までは以下を変更しないこと！
 // 注意2: 課題6-1 で以下をすべて削除すること
-let data = {"results": {"api_version": "1.26","results_available": 52,"results_returned": "10","results_start": 1,"shop": [{"access": "京王八王子駅を背にし右手に見えるローソンの隣のビル、ホテルザ・ビーの2階です。",
+  let aaaaa = {"results": {"api_version": "1.26","results_available": 52,"results_returned": "10","results_start": 1,"shop": [{"access": "京王八王子駅を背にし右手に見えるローソンの隣のビル、ホテルザ・ビーの2階です。",
         "address": "東京都八王子市明神町４-6-12　ホテル・ザ・ビー八王子（旧八王子プラザホテル）2F",
         "band": "可",
         "barrier_free": "なし",

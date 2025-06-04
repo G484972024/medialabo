@@ -25,10 +25,7 @@ function henkou() {
 	for(let r = 0;r<gakka.length;r=r+1) {
 		let i = document.createElement('li');
 		let u = gakka[r].name;
-		i.textContent = u;
-		
-
-		
+		i.textContent = u;		
 		l.insertAdjacentElement('beforeend', i);
 	}
 	let g = document.querySelector('h2#dept');

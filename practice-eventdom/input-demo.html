@@ -15,3 +15,17 @@
 	<p id="message">メッセージ</p>
   </body>
 </html>
+
+let a = data.results.shop[0];
+  let p = document.createElement("p");
+  p.textContent = a.name;
+  let c = document.createElement('div'); 
+  c.setAttribute('id','result'); 
+  let b = document.querySelector('body'); 
+  b.insertAdjacentElement('beforeend', c); 
+  c.insertAdjacentElement('beforeend', p);
+  let x = document.createElement('m');
+  x.textContent = a.access;
+  c.insertAdjacentElement('beforeend', x);
+
+    

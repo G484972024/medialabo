@@ -1,3 +1,15 @@
 p {
 	color: navy;
 }
+h1 {
+    font-size: 200%;
+	border: solid 1px #dfdfdf;
+	background-color: #dfdfdf;
+}
+
+h1 + p {
+    font-size: 150%;
+}
+button {
+    font-size: 150%;
+}
