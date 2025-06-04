@@ -55,12 +55,27 @@ function printDom(data) {
 
  
   let shop = data.results.shop[0];
+
   let e = document.createElement('li');
   e.textContent = "[店名]  "+shop.name;
-  a.insertAdjacentElement('beforeend', e); 
-  let w = document.createElement('li');
-  w.textContent = "[アクセス]  "+shop.access;
-  a.insertAdjacentElement('beforeend', w); 
+  a.insertAdjacentElement('beforeend', e);
+  
+  let w1 = document.createElement('li');
+  w1.textContent = "[アクセス]  "+shop.access;
+  a.insertAdjacentElement('beforeend', w1);
+
+  let w2 = document.createElement('li');
+  w2.textContent = "[バリアフリー]  "+shop.barrier_free;
+  a.insertAdjacentElement('beforeend', w2);
+
+  let w3 = document.createElement('li');
+  w3.textContent = "[ディナー料金]  "+shop.average;
+  a.insertAdjacentElement('beforeend', w3);
+
+  let w4 = document.createElement('li');
+  w4.textContent = "[カード利用]  "+shop.card;
+  a.insertAdjacentElement('beforeend', w4);
+
   c.insertAdjacentElement('beforeend', a);
   
 
@@ -70,9 +85,23 @@ function printDom(data) {
   e = document.createElement('li');
   e.textContent = "[店名]  "+shop.name; //店の名前
   h.insertAdjacentElement('beforeend', e); 
-  w = document.createElement('li');
-  w.textContent = "[アクセス]  "+shop.access;//アクセス
-  h.insertAdjacentElement('beforeend', w); 
+
+  w11 = document.createElement('li');
+  w11.textContent = "[アクセス]  "+shop.access;//アクセス
+  h.insertAdjacentElement('beforeend', w11); 
+
+  let w22 = document.createElement('li');
+  w22.textContent = "[バリアフリー]  "+shop.barrier_free;
+  h.insertAdjacentElement('beforeend', w22);
+
+  let w33 = document.createElement('li');
+  w33.textContent = "[ディナー料金]  "+shop.average;
+  h.insertAdjacentElement('beforeend', w33);
+
+  let w44 = document.createElement('li');
+  w44.textContent = "[カード利用]  "+shop.card;
+  h.insertAdjacentElement('beforeend', w44);
+
   c.insertAdjacentElement('beforeend', h);
 
 

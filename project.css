@@ -9,6 +9,8 @@ h1 {
 
 h1 + p {
     font-size: 150%;
+    border: solid 1px #0f0e0e;
+    
 }
 button {
     font-size: 150%;
