@@ -34,7 +34,7 @@ function printDom(data) {
 
   u = document.createElement('p');
   u.setAttribute('id','nikenn');
-  u.textContent = '5件がヒットしました';
+  u.textContent = '7件がヒットしました';
   y.insertAdjacentElement('beforeend', u) 
 
 
@@ -53,6 +53,10 @@ function printDom(data) {
   h2.setAttribute('id','yonkenme');
   let h3  = document.createElement('ul');
   h3.setAttribute('id','gokenme');
+  let h4  = document.createElement('ul');
+  h4.setAttribute('id','rokukenme');
+  let h5  = document.createElement('ul');
+  h5.setAttribute('id','nanakenme');
 
   
 
@@ -179,6 +183,52 @@ function printDom(data) {
 
   c.insertAdjacentElement('beforeend', h3);
 
+  shop = data.results.shop[5];
+  e = document.createElement('li');
+  e.textContent = "[店名]  "+shop.name; //店の名前
+  h3.insertAdjacentElement('beforeend', e); 
+
+  w11 = document.createElement('li');
+  w11.textContent = "[アクセス]  "+shop.access;//アクセス
+  h4.insertAdjacentElement('beforeend', w11); 
+
+  w22 = document.createElement('li');
+  w22.textContent = "[バリアフリー]  "+shop.barrier_free;
+  h4.insertAdjacentElement('beforeend', w22);
+
+  w33 = document.createElement('li');
+  w33.textContent = "[ディナー料金]  "+shop.average;
+  h4.insertAdjacentElement('beforeend', w33);
+
+  w44 = document.createElement('li');
+  w44.textContent = "[カード利用]  "+shop.card;
+  h4.insertAdjacentElement('beforeend', w44);
+
+  c.insertAdjacentElement('beforeend', h4);
+
+  shop = data.results.shop[6];
+  e = document.createElement('li');
+  e.textContent = "[店名]  "+shop.name; //店の名前
+  h5.insertAdjacentElement('beforeend', e); 
+
+  w11 = document.createElement('li');
+  w11.textContent = "[アクセス]  "+shop.access;//アクセス
+  h5.insertAdjacentElement('beforeend', w11); 
+
+  w22 = document.createElement('li');
+  w22.textContent = "[バリアフリー]  "+shop.barrier_free;
+  h5.insertAdjacentElement('beforeend', w22);
+
+  w33 = document.createElement('li');
+  w33.textContent = "[ディナー料金]  "+shop.average;
+  h5.insertAdjacentElement('beforeend', w33);
+
+  w44 = document.createElement('li');
+  w44.textContent = "[カード利用]  "+shop.card;
+  h5.insertAdjacentElement('beforeend', w44);
+
+  c.insertAdjacentElement('beforeend', h5);
+
   
 
   
@@ -218,6 +268,18 @@ function printDom(data) {
   let qqqqq = document.createElement('p'); 
   qqqqq.textContent = '5件目'; 
   ggggg.insertAdjacentElement('beforebegin',qqqqq); 
+
+  let gggggg = document.querySelector('ul#rokukenme'); 
+  let qqqqqq = document.createElement('p'); 
+  qqqqqq.textContent = '6件目'; 
+  gggggg.insertAdjacentElement('beforebegin',qqqqqq); 
+
+  let ggggggg = document.querySelector('ul#nanakenme'); 
+  let qqqqqqq = document.createElement('p'); 
+  qqqqqqq.textContent = '7件目'; 
+  ggggggg.insertAdjacentElement('beforebegin',qqqqqqq); 
+
+
 
 
 
